@@ -28,6 +28,7 @@ vertex offset.
 ### 3. Ver objetos a traves de la pared.
 Un efecto de post-proceso simple que muestra ciertos assets de forma llamativa a
 traves de las paredes cuando se encuentras tapados por otro objeto.
+
 ![Render Object](Images/SeeThroughRenderObjects.png)
 ![SeeThrough Example](Images/SeeThroughDisplay.png)
 ### 4. _**LA GRIETA**_
