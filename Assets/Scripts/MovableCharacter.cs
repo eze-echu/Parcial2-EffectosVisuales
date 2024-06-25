@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -21,12 +22,18 @@ public class MovableCharacter : MonoBehaviour, iBurnable
     public Volume postProcessing;
 
     private Vignette m_Vignette;
+
+    public DrawFullscreenFeature heat;
+
+    private UniversalRendererData _universalRendererData;
+
     // Start is called before the first frame update
     void Start()
     {
+        _universalRendererData = ScriptableObject.CreateInstance<UniversalRendererData>();
         move = new Vector3();
         m_Vignette = postProcessing.profile.Add<Vignette>();
-        m_Vignette.intensity.Override(0.3f);
+        m_Vignette.intensity.Override(0.4f);
         m_Vignette.color.Override(Color.black);
     }
 
@@ -70,12 +77,13 @@ public class MovableCharacter : MonoBehaviour, iBurnable
     {
         OnFire = true;
         m_Vignette.color.Override(Color.red);
-        m_Vignette.intensity.Override(Mathf.Lerp(0.3f, 0.6f, 2f));
-        m_Vignette.intensity.Override(Mathf.Lerp(0.6f, 0.3f, 2f));
+        heat.SetActive(true);
+        m_Vignette.intensity.Override(Mathf.Lerp(0.4f, 0.6f, 2f));
         yield return new WaitForSeconds(5f);
         OnFire = false;
         m_Vignette.color.Override(Color.black);
         m_Vignette.intensity.Override(0.3f);
+        heat.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -84,7 +84,7 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
---- !u!114 &-1162200726416225911
+--- !u!114 &-2740969148573724810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,17 +93,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
-  m_Name: FullScreenPassRendererFeature
+  m_Script: {fileID: 11500000, guid: 8612fcb5690da3547b62ed9681b1ebc5, type: 3}
+  m_Name: Heat
   m_EditorClassIdentifier: 
   m_Active: 0
-  injectionPoint: 600
-  fetchColorBuffer: 1
-  requirements: 4
-  passMaterial: {fileID: -876546973899608171, guid: 53231dbd4c5a7f8419fcd6de65608d3d, type: 3}
-  passIndex: 0
-  bindDepthStencilAttachment: 0
-  m_Version: 1
+  settings:
+    renderPassEvent: 500
+    blitMaterial: {fileID: -876546973899608171, guid: 53231dbd4c5a7f8419fcd6de65608d3d, type: 3}
+    blitMaterialPassIndex: -1
+    sourceType: 0
+    destinationType: 0
+    sourceTextureId: _SourceTexture
+    destinationTextureId: _DestinationTexture
+    mask:
+      serializedVersion: 2
+      m_Bits: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,10 +126,10 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: 347513238818611797}
   - {fileID: -8328209231426850857}
-  - {fileID: -1162200726416225911}
   - {fileID: -6415658323864097604}
   - {fileID: 8469469029590312367}
-  m_RendererFeatureMap: 55628712739dd204d76fac29d4416c8c898942d09808dfefbc6ccdfdbe00f7a6af25e79035998975
+  - {fileID: -2740969148573724810}
+  m_RendererFeatureMap: 55628712739dd204d76fac29d4416c8cbc6ccdfdbe00f7a6af25e79035998975764ff5e6141ff6d9
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -147,7 +151,7 @@ MonoBehaviour:
   m_AssetVersion: 2
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 631
   m_TransparentLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295

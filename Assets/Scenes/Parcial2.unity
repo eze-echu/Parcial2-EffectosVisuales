@@ -16226,6 +16226,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   postProcessing: {fileID: 420777989}
+  heat: {fileID: -2740969148573724810, guid: 1d10915fbf9b56b48a5e8eb5917767a2, type: 2}
 --- !u!1001 &1421947641
 PrefabInstance:
   m_ObjectHideFlags: 0

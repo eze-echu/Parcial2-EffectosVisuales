@@ -47,6 +47,7 @@ public class Ice: MonoBehaviour, iBurnable
             _IceShader.SetFloat(Melt1, value);
             yield return null;
         }
+
         //Chest.Play("Chest");
         Chest.SetBool("Open", true);
         //Chest.Play("Open");
